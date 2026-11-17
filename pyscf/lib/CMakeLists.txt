@@ -174,8 +174,8 @@ option(WITH_F12 "Compling F12 integrals" ON)
 option(USE_QCINT "Using the qcint library (optimized for x86-64) for gaussian integral evaluation" OFF)
 
 if(BUILD_LIBCINT)
-  set(LIBCINT_GIT https://github.com/sunqm/libcint.git) # libcint is a portable, cross-platform implementation
-  set(LIBCINT_VERSION v6.2.0)
+  set(LIBCINT_GIT git@gitee.com:ulysses-s/libcint.git) # libcint is a portable, cross-platform implementation
+  set(LIBCINT_VERSION v6.1.3)
   if (USE_QCINT)
     set(LIBCINT_GIT https://github.com/sunqm/qcint.git) # qcint is an optimized implementation for x86-64 architecture
     set(LIBCINT_VERSION v6.2.0)
@@ -250,7 +250,7 @@ endif() # ENABLE_LIBXC
 
 if(ENABLE_XCFUN AND BUILD_XCFUN)
   ExternalProject_Add(libxcfun
-    GIT_REPOSITORY https://github.com/dftlibs/xcfun.git
+    GIT_REPOSITORY git@github.com:wjyan39/xcfun.git
     GIT_TAG a89b783
     # CI builds the wheel twice from one tree. Preserve the external-project
     # stamps so the final packaging pass does not fetch and patch XCFun again.
